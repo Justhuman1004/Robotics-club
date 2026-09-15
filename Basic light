@@ -1,0 +1,16 @@
+// C++ code
+//
+void setup()//Basic code in C++ setsup variables and statements
+{
+  pinMode(A1, OUTPUT);
+}
+
+void loop() 
+{
+  digitalWrite(A1, HIGH);
+  delay(1000);
+  digitalWrite(A1, LOW);
+  delay(1000);
+}
+
+//BUILD A CIRCULT THAT HAS ONE MORE LED WITH BLINKING IN SAME TIME
