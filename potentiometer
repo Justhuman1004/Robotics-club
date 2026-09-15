@@ -1,0 +1,86 @@
+int sensorValue = 0;
+
+int outputValue = 0;
+
+void setup()
+{
+  pinMode(A0, INPUT);
+  pinMode(7, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  // read the analog in value:
+  sensorValue = analogRead(A0);
+  // map it to the range of the analog out:
+  outputValue = map(sensorValue, 0, 1023, 0, 255);
+  // convert analogy value to range of 0, 255
+  // 원래 저거 potentiometer 읽으면 0, 1023 으로 나오는데 그걸 바꿔줌
+  analogWrite(7, outputValue);
+  // 이거는 값을 7에 저장
+  Serial.print("sensor = ");
+  Serial.print(sensorValue);
+  Serial.print("\t output = ");
+  Serial.println(outputValue);
+  // wait 2 milliseconds before the next loop for the
+  // analog-to-digital converter to settle after the
+  // last reading:
+  delay(2); // Wait for 2 millisecond(s)
+}
+//--------------------------------------------------------------
+int sensorValue = 0;
+
+int outputValue = 0;
+
+void setup()
+{
+  pinMode(A0, INPUT);
+  pinMode(7, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  sensorValue = analogRead(A0);
+  outputValue = map(sensorValue, 0, 1023, 0, 255);
+  analogWrite(7, outputValue);
+  Serial.print("sensor = ");
+  Serial.print(sensorValue);
+  Serial.print("\t output = ");
+  Serial.println(outputValue);
+  delay(2);
+}
+
+//HOW TO MAKE ONE ANOHTER LED TO ACT SAME 
+//--------------------------------------------------------------
+  
+int sensorValue = 0;
+
+int outputValue = 0;
+
+void setup()
+{
+  pinMode(A0, INPUT);
+  pinMode(7, OUTPUT);
+  pinMode(8, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  sensorValue = analogRead(A0);
+  outputValue = map(sensorValue, 0, 1023, 0, 255);
+  analogWrite(7, outputValue);
+  analogWrite(8, outputValue);
+  
+  //THEN HOW TO MAKE IT ACT INVERSLY
+  //analogWrite(8, 255-outputValue);
+  //react inversly
+  
+  Serial.print("sensor = ");
+  Serial.print(sensorValue);
+  Serial.print("\t output = ");
+  Serial.println(outputValue);
+  delay(2);
+}
