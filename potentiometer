@@ -5,7 +5,7 @@ int outputValue = 0;
 void setup()
 {
   pinMode(A0, INPUT);
-  pinMode(7, OUTPUT);
+  pinMode(9, OUTPUT);
   Serial.begin(9600);
 }
 
@@ -17,7 +17,7 @@ void loop()
   outputValue = map(sensorValue, 0, 1023, 0, 255);
   // convert analogy value to range of 0, 255
   // 원래 저거 potentiometer 읽으면 0, 1023 으로 나오는데 그걸 바꿔줌
-  analogWrite(7, outputValue);
+  analogWrite(9, outputValue);
   // 이거는 값을 7에 저장
   Serial.print("sensor = ");
   Serial.print(sensorValue);
@@ -36,7 +36,7 @@ int outputValue = 0;
 void setup()
 {
   pinMode(A0, INPUT);
-  pinMode(7, OUTPUT);
+  pinMode(9, OUTPUT);
   Serial.begin(9600);
 }
 
@@ -44,7 +44,7 @@ void loop()
 {
   sensorValue = analogRead(A0);
   outputValue = map(sensorValue, 0, 1023, 0, 255);
-  analogWrite(7, outputValue);
+  analogWrite(9, outputValue);
   Serial.print("sensor = ");
   Serial.print(sensorValue);
   Serial.print("\t output = ");
@@ -62,8 +62,8 @@ int outputValue = 0;
 void setup()
 {
   pinMode(A0, INPUT);
-  pinMode(7, OUTPUT);
-  pinMode(8, OUTPUT);
+  pinMode(9, OUTPUT);
+  pinMode(10, OUTPUT);
   Serial.begin(9600);
 }
 
@@ -71,8 +71,8 @@ void loop()
 {
   sensorValue = analogRead(A0);
   outputValue = map(sensorValue, 0, 1023, 0, 255);
-  analogWrite(7, outputValue);
-  analogWrite(8, outputValue);
+  analogWrite(9, outputValue);
+  analogWrite(10, outputValue);
   
   //THEN HOW TO MAKE IT ACT INVERSLY
   //analogWrite(8, 255-outputValue);
